@@ -42,10 +42,11 @@
             color-scheme: light;
             --bg: #ffffff;
             --bg2: #faf8f5;
-            --acc: #a8875a;
-            --gold: #8f7046;
-            --gold-l: #e2d2b6;
-            --tint: #f6f2ec;
+            --acc: #b89a72;
+            --gold: #8a6d47;
+            --gold-l: #e4d6c0;
+            --tint: #f3ece1;
+            --sand: linear-gradient(115deg, #cdb18e 0%, #ddc9ab 30%, #e6d9c4 55%, #d8c09e 80%, #c9ab85 100%);
             --saffron: #8f7046;
             --nude: #f6f2ec;
             --ink: #1c1814;
@@ -206,9 +207,8 @@
 
         .herobg {
             position: relative;
-            background: var(--bg);
-            margin-top: -4.2rem;
-            padding-top: 4.2rem;
+            background: var(--sand);
+            margin: 1.2rem clamp(.75rem, 2.5vw, 2.25rem) 0;
             overflow: hidden
         }
 
@@ -234,7 +234,7 @@
         .hero .yr {
             font-size: 1.25rem;
             margin: 1rem 0 1.6rem;
-            color: var(--muted)
+            color: var(--ink)
         }
 
         .tag {
@@ -256,7 +256,7 @@
             position: absolute;
             inset: 0;
             clip-path: polygon(50.0% 0.0%, 79.4% 9.5%, 97.6% 34.5%, 97.6% 65.5%, 79.4% 90.5%, 50.0% 100.0%, 20.6% 90.5%, 2.4% 65.5%, 2.4% 34.5%, 20.6% 9.5%);
-            background: var(--acc);
+            background: rgba(255, 255, 255, .55);
             transform: translate(3.5%, 3%) rotate(18deg)
         }
 
@@ -303,7 +303,7 @@
         .btn.o {
             background: transparent;
             color: var(--ink);
-            border-color: var(--acc)
+            border-color: var(--ink)
         }
 
         .btn.s {
@@ -312,8 +312,9 @@
         }
 
         .mq {
-            background: var(--ink);
-            color: var(--gold-l);
+            margin: 0 clamp(.75rem, 2.5vw, 2.25rem);
+            background: var(--tint);
+            color: var(--ink);
             overflow: hidden;
             white-space: nowrap;
             padding: .8rem 0
@@ -368,8 +369,8 @@
         .ten {
             font-size: clamp(3.5rem, 18cqi, 7rem);
             line-height: 1;
-            background: var(--tint);
-            border: 1px solid var(--acc);
+            background: var(--sand);
+            border: 0;
             border-radius: 2px;
             padding: 1.5rem 2rem;
             display: inline-block;
@@ -389,7 +390,7 @@
         }
 
         .steps>div:nth-child(3n+1) {
-            background: var(--tint)
+            background: var(--sand)
         }
 
         .steps>div:nth-child(3n+2) {
@@ -399,7 +400,7 @@
         }
 
         .steps>div:nth-child(3n) {
-            background: var(--nude)
+            background: var(--sand)
         }
 
         .steps h3 {
@@ -427,8 +428,7 @@
             border-radius: 2px;
             padding: 1.3rem;
             min-height: 230px;
-            background: var(--bg);
-            border: 1px solid var(--line);
+            background: var(--sand);
             transition: transform .25s, box-shadow .25s
         }
 
@@ -461,8 +461,8 @@
         }
 
         .idx .soon {
-            background: transparent !important;
-            border: 2px dashed var(--acc);
+            background: var(--bg) !important;
+            border: 1px solid var(--acc);
             justify-content: center
         }
 
@@ -476,7 +476,6 @@
             border-radius: 2px;
             overflow: hidden;
             height: min(62vw, 600px);
-            box-shadow: 0 0 0 1px var(--line)
         }
 
         .model img {
@@ -528,8 +527,8 @@
             display: flex;
             flex-direction: column;
             background: var(--bg);
-            border: 1px solid var(--line);
-            box-shadow: 0 10px 28px rgba(28, 24, 20, .06)
+            text-align: center;
+            align-items: center
         }
 
         .grid .card {
@@ -542,8 +541,10 @@
         }
 
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .22em;
             margin: 1rem .5rem .2rem;
             line-height: 1.2
         }
@@ -567,8 +568,7 @@
         }
 
         .card .btn {
-            align-self: flex-start;
-            margin-left: .5rem
+            align-self: center
         }
 
         .chips {
