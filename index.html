@@ -247,23 +247,21 @@
         .decw {
             position: relative;
             width: calc(100% - 1.5rem);
-            max-width: 540px;
-            margin: 0 auto 0 0
+            max-width: 430px;
+            margin: 0 auto
         }
 
         .decw::before {
             content: "";
             position: absolute;
             inset: 0;
-            clip-path: polygon(50.0% 0.0%, 79.4% 9.5%, 97.6% 34.5%, 97.6% 65.5%, 79.4% 90.5%, 50.0% 100.0%, 20.6% 90.5%, 2.4% 65.5%, 2.4% 34.5%, 20.6% 9.5%);
-            background: rgba(255, 255, 255, .55);
-            transform: translate(3.5%, 3%) rotate(18deg)
+            border: 1px solid rgba(255, 255, 255, .85);
+            transform: translate(16px, 16px)
         }
 
         .dec {
             position: relative;
-            aspect-ratio: 1;
-            clip-path: polygon(50.0% 0.0%, 79.4% 9.5%, 97.6% 34.5%, 97.6% 65.5%, 79.4% 90.5%, 50.0% 100.0%, 20.6% 90.5%, 2.4% 65.5%, 2.4% 34.5%, 20.6% 9.5%);
+            aspect-ratio: 2/3;
             background: #241812
         }
 
@@ -379,38 +377,67 @@
 
         .steps {
             display: grid;
-            gap: .9rem;
-            margin-top: 3rem
-        }
-
-        .steps>div {
-            border-radius: 2px;
-            padding: 1.6rem;
-            border: 1px solid var(--line)
-        }
-
-        .steps>div:nth-child(3n+1) {
-            background: var(--sand)
-        }
-
-        .steps>div:nth-child(3n+2) {
+            margin-top: 3.5rem;
             background: var(--ink);
-            color: #fff;
-            border-color: var(--ink)
+            color: #f3ece1;
+            padding: .5rem 1.5rem
         }
 
-        .steps>div:nth-child(3n) {
-            background: var(--sand)
+        .steps>a {
+            display: flex;
+            flex-direction: column;
+            gap: .55rem;
+            padding: 2.2rem .25rem;
+            text-decoration: none;
+            border-top: 1px solid rgba(184, 154, 114, .35)
+        }
+
+        .steps>a:first-child {
+            border-top: 0
+        }
+
+        .steps .n {
+            font-family: Beckman, Gravity, sans-serif;
+            color: var(--acc);
+            letter-spacing: .3em;
+            font-size: .95rem
         }
 
         .steps h3 {
-            margin: 0 0 .4rem;
-            font-size: clamp(1.4rem, 7cqi, 1.9rem)
+            margin: 0;
+            font-size: clamp(2rem, 7cqi, 2.6rem);
+            color: #fff;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: color .25s
+        }
+
+        .steps .st {
+            margin: 0;
+            font-size: .8rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--gold-l)
         }
 
         .steps p {
             margin: 0;
-            font-size: 1.15rem
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #d9cdbb
+        }
+
+        .steps .go {
+            margin-top: auto;
+            padding-top: .9rem;
+            font-size: .75rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--acc)
+        }
+
+        .steps>a:hover h3 {
+            color: var(--gold-l)
         }
 
         .idx {
@@ -652,14 +679,37 @@
             outline-color: var(--gold-l)
         }
 
+        .eyebrow {
+            font-size: .78rem;
+            letter-spacing: .26em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 400;
+            margin: 0 0 .9rem
+        }
+
+        /* Manifest Symbol: the animation reel beside the story */
+        .msym {
+            display: grid;
+            gap: 3rem;
+            align-items: center
+        }
+
         .reel {
-            height: auto;
-            aspect-ratio: 9/16;
+            position: relative;
             width: 100%;
             max-width: 360px;
             margin: 0 auto;
-            position: relative;
+            aspect-ratio: 9/16;
             background: var(--sand)
+        }
+
+        .reel::after {
+            content: "";
+            position: absolute;
+            inset: -14px;
+            border: 1px solid var(--acc);
+            pointer-events: none
         }
 
         .reel video {
@@ -669,30 +719,76 @@
             display: block
         }
 
-        .reel button,
-        .pager button {
-            font: inherit;
-            cursor: pointer;
-            color: var(--ink);
-            border: 1px solid var(--line)
-        }
-
         .reel button {
             position: absolute;
             right: .8rem;
             bottom: .8rem;
-            font-size: .75rem;
-            letter-spacing: .14em;
+            z-index: 1;
+            font: inherit;
+            font-size: .7rem;
+            letter-spacing: .18em;
             text-transform: uppercase;
-            padding: .45rem .8rem;
-            background: rgba(255, 255, 255, .8)
+            padding: .5rem .8rem;
+            border: 1px solid rgba(28, 24, 20, .4);
+            background: rgba(255, 255, 255, .75);
+            color: var(--ink);
+            cursor: pointer
         }
 
+        .craft {
+            display: grid;
+            gap: 1.3rem;
+            margin-top: 2.2rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1.6rem
+        }
+
+        .craft b {
+            display: block;
+            font-family: Beckman, Gravity, sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            letter-spacing: .04em
+        }
+
+        .craft span {
+            color: var(--muted);
+            font-size: 1.02rem
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: 2rem
+        }
+
+        .badges span {
+            display: inline-flex;
+            align-items: center;
+            gap: .55rem;
+            border: 1px solid var(--acc);
+            padding: .5rem 1rem;
+            font-size: .76rem;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .badges span::before {
+            content: "◆";
+            color: var(--acc);
+            font-size: .6rem
+        }
+
+        /* Fifteen symbols picker */
         .symidx {
             list-style: none;
-            padding: 0;
-            grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
-            margin-bottom: 3rem
+            margin: 2.2rem 0 3rem;
+            padding: 0 0 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: .45rem;
+            border-bottom: 1px solid var(--line)
         }
 
         .symidx button {
@@ -701,70 +797,265 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: .3rem;
-            padding: .8rem .4rem;
+            gap: .4rem;
+            padding: .7rem .3rem .8rem;
+            background: var(--bg2);
+            color: var(--ink);
             border: 0;
             border-bottom: 2px solid transparent;
-            background: var(--sand);
-            color: var(--ink);
             font: inherit;
-            font-size: .95rem;
-            cursor: pointer;
-            transition: transform .25s
+            cursor: pointer
         }
 
         .symidx button:hover {
-            transform: translateY(-3px)
-        }
-
-        .symidx button[aria-pressed="true"] {
-            background: var(--bg);
-            border: 1px solid var(--acc);
-            border-bottom-width: 2px
+            background: var(--tint)
         }
 
         .symidx img {
             width: 100%;
-            height: auto;
             aspect-ratio: 1;
-            object-fit: contain;
-            margin: 0;
-            mix-blend-mode: normal
+            object-fit: contain
         }
 
-        #plate img {
-            object-fit: contain;
-            padding: 12%;
-            transition: opacity .3s
+        .symidx strong {
+            font-family: Beckman, Gravity, sans-serif;
+            font-weight: 400;
+            font-size: .8rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            line-height: 1.15;
+            text-align: center
         }
 
-        #plate.swap img {
+        .symidx button[aria-pressed="true"] {
+            background: var(--tint);
+            border-bottom-color: var(--acc)
+        }
+
+        .stage {
+            display: grid;
+            gap: 2.5rem;
+            align-items: center
+        }
+
+        .plate {
+            position: relative;
+            aspect-ratio: 1;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            background: var(--sand);
+            clip-path: polygon(50.0% 0.0%, 79.4% 9.5%, 97.6% 34.5%, 97.6% 65.5%, 79.4% 90.5%, 50.0% 100.0%, 20.6% 90.5%, 2.4% 65.5%, 2.4% 34.5%, 20.6% 9.5%)
+        }
+
+        .plate img {
+            position: absolute;
+            inset: 9%;
+            width: 82%;
+            height: 82%;
+            object-fit: contain;
+            transition: opacity .3s;
+            filter: drop-shadow(0 16px 22px rgba(28, 24, 20, .28))
+        }
+
+        .plate.swap img {
             opacity: 0
         }
 
-        .pager {
-            display: inline-flex;
+        .detail {
+            container-type: inline-size;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 0
+        }
+
+        .detail .eyebrow {
+            margin: 0
+        }
+
+        .detail h3 {
+            font-size: clamp(2.4rem, 12cqi, 4.4rem)
+        }
+
+        .detail .tag {
+            margin: 0
+        }
+
+        .kw {
+            display: flex;
+            flex-wrap: wrap;
             gap: .45rem;
-            margin-left: .7rem;
-            vertical-align: middle
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        .kw li {
+            border: 1px solid var(--line);
+            padding: .3rem .85rem;
+            font-size: .74rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .spec {
+            margin: 0;
+            font-size: .8rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--gold)
+        }
+
+        .detail .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+            align-items: center;
+            margin-top: .4rem
+        }
+
+        .pager {
+            display: flex;
+            gap: .45rem
         }
 
         .pager button {
             width: 3rem;
             height: 3rem;
+            border: 1px solid var(--line);
             background: transparent;
-            font-size: 1.1rem
+            color: var(--ink);
+            font: inherit;
+            font-size: 1.1rem;
+            cursor: pointer
         }
 
-        .gal.wear {
-            grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr))
+        .pager button:hover {
+            border-color: var(--ink)
         }
 
-        .gal img {
-            height: auto
+        /* Manifest it: worn every day */
+        .wear {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .7rem;
+            margin-top: 2.2rem
+        }
+
+        .wear img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover
+        }
+
+        /* Client advisor in the footer */
+        .adv {
+            display: grid;
+            gap: 2.5rem
+        }
+
+        footer .eyebrow {
+            color: var(--acc)
+        }
+
+        dl.contact {
+            margin: 0
+        }
+
+        dl.contact div {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: .3rem 1rem;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(226, 210, 182, .25)
+        }
+
+        dl.contact div:last-child {
+            border-bottom: 1px solid rgba(226, 210, 182, .25)
+        }
+
+        dl.contact dt {
+            grid-column: 1 / -1;
+            font-size: .72rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--gold-l)
+        }
+
+        dl.contact dd {
+            margin: 0;
+            font-size: 1.15rem;
+            overflow-wrap: anywhere
+        }
+
+        dl.contact dd a {
+            text-decoration: none
+        }
+
+        .copy-btn {
+            font: inherit;
+            font-size: .68rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            background: transparent;
+            color: var(--gold-l);
+            border: 1px solid rgba(226, 210, 182, .4);
+            padding: .3rem .7rem;
+            cursor: pointer
+        }
+
+        footer .badges span {
+            color: #fff
+        }
+
+        @media(min-width:600px) {
+            .symidx {
+                grid-template-columns: repeat(5, minmax(0, 1fr))
+            }
+
+            .wear {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            dl.contact div {
+                grid-template-columns: 8.5rem minmax(0, 1fr) auto
+            }
+
+            dl.contact dt {
+                grid-column: auto
+            }
         }
 
         @media(min-width:820px) {
+            .msym,
+            .stage,
+            .adv {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem
+            }
+
+            .msym {
+                grid-template-columns: .8fr 1.2fr
+            }
+
+            .symidx {
+                grid-template-columns: repeat(8, minmax(0, 1fr))
+            }
+
+            .steps>a {
+                border-top: 0;
+                border-left: 1px solid rgba(184, 154, 114, .35);
+                padding: 2.4rem 2rem
+            }
+
+            .steps>a:first-child {
+                border-left: 0
+            }
+
             .hero {
                 grid-template-columns: 1.15fr .85fr;
                 padding-top: 4.5rem;
@@ -801,7 +1092,7 @@
     <header class="top"><a class="d" href="#top" style="text-decoration:none">Tenth Dimension Jewels</a>
         <details class="m">
             <summary>Browse</summary>
-            <nav><a href="#symbol">The Manifest Symbol</a><a href="#start">Our philosophy</a><a href="#symbols">Fifteen symbols</a><a href="#collections">All collections</a><a
+            <nav><a href="#symbol">The Manifest Symbol</a><a href="#start">Our philosophy</a><a href="#symbols">Dream · Fifteen symbols</a><a href="#collections">Align · All collections</a><a href="#wear">Manifest · Wear it daily</a><a
                     href="#manifest">Manifest</a><a href="#abundance">Abundance Talisman</a><a
                     href="#serenity">Serenity</a><a href="#sparkle">Sparkle</a><a href="#halo">Halo</a><a
                     href="#jetaime">Je T’aime</a><a href="#contact">Contact</a></nav>
@@ -821,48 +1112,38 @@
                             an advisor</a></div>
                 </div>
                 <div class="decw">
-                    <div class="dec"><img src="img/banner.jpg" width="398" height="600" style="object-position:50% 22%"
+                    <div class="dec"><img src="img/banner.jpg" width="398" height="600"
                             alt="Model wearing Tenth Dimension jewels in 18K gold"></div>
                 </div>
             </div>
         </div>
         <div class="mq"><i>Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; Wear the Power to Manifest &nbsp;◆&nbsp; Dream &nbsp;◆&nbsp; Align &nbsp;◆&nbsp; Manifest &nbsp;◆&nbsp; </i></div>
         <section id="symbol">
-            <div class="wrap">
-                <div class="ch">
-                    <div class="model reel">
-                        <video id="reel" src="media/manifest-symbol.mp4" poster="media/manifest-symbol-poster.jpg"
-                            autoplay muted loop playsinline preload="metadata"
-                            aria-label="Animation of the Manifest Symbol revealing each of its signs"></video>
-                        <button type="button" id="snd" aria-pressed="false">Sound on</button>
-                    </div>
-                    <div>
-                        <p class="kick">The Manifest Symbol</p>
-                        <h2 class="d">One Symbol, Infinite Possibilities</h2>
-                        <p class="tag">Wear the power to manifest</p><span class="int">Dream ◆ Align ◆ Manifest</span>
-                        <p class="lead">Our patented logo is more than a design. It is a manifestation symbol, and every
-                            one of its fifteen signs became a signature jewel: a modern talisman to set intentions,
-                            believe in possibility and manifest your dreams.</p>
-                        <p class="lead">Within the symbol lie the star, sun, moon, heart, butterfly, flower, panther,
-                            bird, evil eye, hamsa hand, fish, kite, crown and the five elements of nature. Each one
-                            carries an intention. Choose the one that speaks to you.</p>
-                        <div class="chips" style="margin:1.4rem 0 0"><span>IGI Certified</span><span>BIS
-                                Hallmarked</span><span>US &amp; Indian patented</span></div>
-                    </div>
+            <div class="wrap msym">
+                <div class="reel">
+                    <video id="reel" src="media/manifest-symbol.mp4" poster="media/manifest-symbol-poster.jpg" autoplay
+                        muted loop playsinline preload="metadata"
+                        aria-label="Animation of the Manifest Symbol revealing each of its signs"></video>
+                    <button type="button" id="snd" aria-pressed="false">Sound on</button>
                 </div>
-                <div class="steps">
-                    <div>
-                        <h3 class="d">Designed in-house</h3>
-                        <p>Every talisman begins as a sketch of the Manifest Symbol.</p>
+                <div>
+                    <p class="eyebrow">The Manifest Symbol</p>
+                    <h2 class="d">One Symbol, Infinite Possibilities</h2>
+                    <p class="lead">Our patented logo is more than a design. It is a manifestation symbol, and every
+                        one of its fifteen signs became a signature jewel: a modern talisman to set intentions, believe
+                        in possibility and manifest your dreams.</p>
+                    <p class="lead">Within the symbol lie the star, sun, moon, heart, butterfly, flower, panther, bird,
+                        evil eye, hamsa hand, fish, kite, crown and the five elements of nature. Each one carries an
+                        intention. Choose the one that speaks to you.</p>
+                    <div class="craft">
+                        <div><b>Designed in-house</b><span>Every talisman begins as a sketch of the Manifest
+                                Symbol.</span></div>
+                        <div><b>US and Indian patented</b><span>The symbol and its design are protected in both
+                                countries.</span></div>
+                        <div><b>Handcrafted in gold</b><span>18K hallmarked gold with certified diamonds.</span></div>
                     </div>
-                    <div>
-                        <h3 class="d">US &amp; Indian patented</h3>
-                        <p>The symbol and its design are protected in both countries.</p>
-                    </div>
-                    <div>
-                        <h3 class="d">Handcrafted in gold</h3>
-                        <p>18K hallmarked gold with IGI certified diamonds.</p>
-                    </div>
+                    <div class="badges"><span>IGI Certified</span><span>BIS Hallmarked</span><span>US &amp; Indian
+                            patented</span></div>
                 </div>
             </div>
         </section>
@@ -885,50 +1166,56 @@
                     </div>
                 </div>
                 <div class="steps">
-                    <div>
+                    <a href="#symbols"><span class="n">I</span>
                         <h3 class="d">Dream</h3>
-                        <p>Choose your symbol of manifestation.</p>
-                    </div>
-                    <div>
+                        <p class="st">Choose your symbol of manifestation</p>
+                        <p>What would you like to bring into your life? Meet the fifteen symbols and the intention each one carries.</p>
+                        <span class="go">Explore the symbols →</span>
+                    </a>
+                    <a href="#collections"><span class="n">II</span>
                         <h3 class="d">Align</h3>
-                        <p>Choose the collection that speaks to it.</p>
-                    </div>
-                    <div>
+                        <p class="st">Choose the collection that speaks to it</p>
+                        <p>See each symbol as a fine jewel, and find the collection that holds your intention.</p>
+                        <span class="go">View the collections →</span>
+                    </a>
+                    <a href="#wear"><span class="n">III</span>
                         <h3 class="d">Manifest</h3>
-                        <p>Wear it as a daily reminder.</p>
-                    </div>
+                        <p class="st">Wear it as a daily reminder</p>
+                        <p>Your personal manifestation talisman, worn close every day: a quiet reminder of what you are becoming.</p>
+                        <span class="go">See it worn →</span>
+                    </a>
                 </div>
             </div>
         </section>
         <section id="symbols">
             <div class="wrap">
-                <p class="kick">Dream · Fifteen symbols</p>
+                <p class="eyebrow">I · Dream &nbsp;—&nbsp; Fifteen symbols</p>
                 <h2 class="d">What will you manifest?</h2>
-                <p class="lead">Each talisman holds its own intention. Select a symbol to see the jewel and what it
-                    stands for.</p>
-                <ul class="idx symidx" id="symidx" aria-label="Choose a symbol"></ul>
-                <div class="ch" aria-live="polite">
-                    <div class="decw">
-                        <div class="dec" id="plate"><img id="stageImg" src="img/symbols/moon.png" width="720"
-                                height="720" alt="The Moon talisman in 18K gold and diamonds"></div>
-                    </div>
-                    <div>
-                        <p class="kick" id="dInt">Manifest balance</p>
-                        <h2 class="d" id="dName">Moon</h2>
-                        <p class="tag" id="dTag">Quiet light for intuitive hearts. A reminder to trust your inner
-                            rhythm and find your balance.</p>
-                        <div class="chips" id="dKw" style="margin:0 0 1rem"></div>
-                        <p class="lead" id="dSpec">18K gold · Diamonds · Stone options on request</p>
-                        <a class="btn s" id="dWa" href="https://wa.me/919902413410">Enquire on WhatsApp</a>
-                        <div class="pager"><button type="button" id="prev" aria-label="Previous symbol">←</button><button
-                                type="button" id="next" aria-label="Next symbol">→</button></div>
+                <p class="lead">Each talisman holds its own intention. Select a symbol to see the jewel and what it stands
+                    for.</p>
+                <ul class="symidx" id="symidx" aria-label="Choose a symbol"></ul>
+                <div class="stage" aria-live="polite">
+                    <div class="plate" id="plate"><img id="stageImg" src="img/symbols/moon.png" width="720" height="720"
+                            alt="The Moon talisman in 18K gold and diamonds"></div>
+                    <div class="detail">
+                        <p class="eyebrow" id="dInt">Manifest balance</p>
+                        <h3 class="d" id="dName">Moon</h3>
+                        <p class="tag" id="dTag">Quiet light for intuitive hearts. A reminder to trust your inner rhythm
+                            and find your balance.</p>
+                        <ul class="kw" id="dKw"></ul>
+                        <p class="spec" id="dSpec">18K gold · Diamonds · Stone options on request</p>
+                        <div class="cta"><a class="btn s" id="dWa" href="https://wa.me/919902413410">Enquire on
+                                WhatsApp</a>
+                            <div class="pager"><button type="button" id="prev" aria-label="Previous symbol">←</button><button
+                                    type="button" id="next" aria-label="Next symbol">→</button></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="collections">
             <div class="wrap">
-                <p class="kick">Align · Ten collections</p>
+                <p class="eyebrow">II · Align &nbsp;—&nbsp; Ten collections</p>
                 <h2 class="d">Choose your Symbols of Manifestation</h2>
                 <p class="lead">Ten collections, each built around an intention. Choose the collection that speaks to
                     yours — tap to jump straight to it.</p>
@@ -1413,11 +1700,11 @@
         </section>
         <section id="wear" class="alt">
             <div class="wrap">
-                <p class="kick">Manifest · Wear it as a daily reminder</p>
+                <p class="eyebrow">III · Manifest &nbsp;—&nbsp; Wear it as a daily reminder</p>
                 <h2 class="d">Worn close, every day</h2>
                 <p class="lead">A talisman is meant to be lived in. Wear yours every day as a quiet reminder of the
                     intention you have set.</p>
-                <div class="gal wear">
+                <div class="wear">
                     <img loading="lazy" src="img/mood1.jpg" width="576" height="303" alt="Panther talisman ring set with diamonds, emeralds and black onyx">
                     <img loading="lazy" src="img/mood2.jpg" width="575" height="303" alt="An emerald and diamond Manifest pendant on cream silk with pearls">
                     <img loading="lazy" src="img/panthoria-ring.jpg" width="1000" height="1000" alt="Panthoria ring in 18K gold with diamonds">
@@ -1429,23 +1716,34 @@
         </section>
         <footer id="contact">
             <div class="wrap">
-                <h2 class="d">Wear what you wish to manifest</h2>
-                <p class="lead" style="color:inherit">Find your personal manifestation talisman. Speak to a client
-                    advisor to explore each piece in person and choose the one that carries your intention.</p>
-                <div class="ct">
-                    <div><span>Client advisor · WhatsApp</span><a
-                            href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20explore%20your%20collections.">+91
-                            99024 13410</a></div>
-                    <div><span>Email</span><a
-                            href="mailto:tenthdimensionjewels@gmail.com">tenthdimensionjewels@gmail.com</a></div>
-                    <div><span>Website</span><a
-                            href="https://www.tenthdimensionjewels.com">www.tenthdimensionjewels.com</a></div>
-                    <div><span>Instagram</span><a
-                            href="https://instagram.com/tenthdimensionjewels">@tenthdimensionjewels</a></div>
-                    <div><span>Certified</span><a>IGI Certified · BIS Hallmarked</a></div>
-                </div><a class="btn"
-                    href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20explore%20your%20collections.">Chat
-                    on WhatsApp</a>
+                <div class="adv">
+                    <div>
+                        <p class="eyebrow">Client advisor</p>
+                        <h2 class="d">Wear what you wish to manifest</h2>
+                        <p class="lead">Find your personal manifestation talisman. Speak to a client advisor to explore
+                            each piece in person and choose the one that carries your intention.</p>
+                        <a class="btn"
+                            href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20explore%20your%20collections.">Chat
+                            on WhatsApp</a>
+                        <div class="badges"><span>IGI Certified</span><span>BIS Hallmarked</span><span>US &amp; Indian
+                                patented</span></div>
+                    </div>
+                    <dl class="contact">
+                        <div><dt>WhatsApp</dt><dd><a
+                                    href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20explore%20your%20collections.">+91
+                                    99024 13410</a></dd><button class="copy-btn" type="button"
+                                data-copy="+91 99024 13410">Copy</button></div>
+                        <div><dt>Email</dt><dd><a
+                                    href="mailto:tenthdimensionjewels@gmail.com">tenthdimensionjewels@gmail.com</a></dd><button
+                                class="copy-btn" type="button" data-copy="tenthdimensionjewels@gmail.com">Copy</button></div>
+                        <div><dt>Website</dt><dd><a
+                                    href="https://www.tenthdimensionjewels.com">www.tenthdimensionjewels.com</a></dd><span></span>
+                        </div>
+                        <div><dt>Instagram</dt><dd><a
+                                    href="https://instagram.com/tenthdimensionjewels">@tenthdimensionjewels</a></dd><span></span>
+                        </div>
+                    </dl>
+                </div>
                 <p class="note">Designed in-house. US and Indian patented. Handcrafted in 18K hallmarked gold with
                     IGI certified diamonds. Symbol meanings are editorial inspiration drawn from our Manifest Symbol,
                     not promises of any particular outcome.</p>
@@ -1475,7 +1773,7 @@
             var $ = function (i) { return document.getElementById(i) };
             var idx = $('symidx'), plate = $('plate'), cur = 0, t = null;
             function wa(name) { return 'https://wa.me/919902413410?text=' + encodeURIComponent('Hi Tenth Dimension, I’d like to know more about the ' + name + ' talisman.') }
-            function kw(list) { return list.map(function (k) { return '<span>' + k + '</span>' }).join('') }
+            function kw(list) { return list.map(function (k) { return '<li>' + k + '</li>' }).join('') }
             D.forEach(function (d, i) {
                 var li = document.createElement('li'), b = document.createElement('button');
                 b.type = 'button';
@@ -1514,6 +1812,12 @@
                 snd.setAttribute('aria-pressed', v.muted ? 'false' : 'true');
             });
 
+            Array.prototype.forEach.call(document.querySelectorAll('.copy-btn'), function (b) {
+                b.addEventListener('click', function () {
+                    var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy' }, 1600) };
+                    try { navigator.clipboard.writeText(b.getAttribute('data-copy')).then(done) } catch (e) { }
+                });
+            });
         })();
     </script>
 </body>
