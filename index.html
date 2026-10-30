@@ -428,6 +428,23 @@
             transform: scale(1.05)
         }
 
+        /* Jewel renders: show the whole piece on the champagne tile */
+        .coll img.pr {
+            object-fit: contain;
+            padding: 14%
+        }
+
+        /* Square product shot: show the whole piece on its own studio grey */
+        .coll img.fit {
+            object-fit: contain;
+            background: #f7f7f7
+        }
+
+        /* Tall 2:3 portraits: keep the face, trim only the bottom */
+        .coll img.up {
+            object-position: 50% 0
+        }
+
         .coll b {
             font-family: Beckman, Gravity, sans-serif;
             font-weight: 400;
@@ -900,11 +917,11 @@
 
         .detail .eyebrow {
             margin: 0;
-            font-size: 1rem
+            font-size: 1.15rem
         }
 
         .detail h3 {
-            font-size: clamp(2rem, 9cqi, 3.4rem)
+            font-size: clamp(1.8rem, 7cqi, 2.8rem)
         }
 
         .detail .tag {
@@ -1193,16 +1210,16 @@
                 <div class="coll">
                     <a href="#manifest"><span class="ph"><img loading="lazy" src="img/models/manifest.jpg" alt=""></span><b>Manifest</b><small>Manifest your destiny</small></a>
                     <a href="#serenity"><span class="ph"><img loading="lazy" src="img/models/serenity.jpg" alt=""></span><b>Serenity</b><small>Manifest calm</small></a>
-                    <a href="#symbols"><span class="ph"><img loading="lazy" src="media/manifest-symbol-poster.jpg" alt=""></span><b>Symbols</b><small>Manifest your intention</small></a>
-                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Panthoria%20collection."><span class="ph"><img loading="lazy" src="img/panthoria-ring.jpg" alt=""></span><b>Panthoria</b><small>Manifest courage</small></a>
+                    <a href="#symbols"><span class="ph"><img class="up" loading="lazy" src="img/collections/symbols.jpg" alt=""></span><b>Symbols</b><small>Manifest your intention</small></a>
+                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Panthoria%20collection."><span class="ph"><img class="fit" loading="lazy" src="img/panthoria-ring.jpg" alt=""></span><b>Panthoria</b><small>Manifest courage</small></a>
                     <a href="#sparkle"><span class="ph"><img loading="lazy" src="img/models/sparkle.jpg" alt=""></span><b>Sparkle</b><small>Manifest radiance</small></a>
                     <a href="#halo"><span class="ph"><img loading="lazy" src="img/models/halo.jpg" alt=""></span><b>Halo</b><small>Manifest confidence</small></a>
                     <a href="#jetaime"><span class="ph"><img loading="lazy" src="img/models/jetaime.jpg" alt=""></span><b>Je T’aime</b><small>Manifest love</small></a>
-                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Manifested%20Love%20collection."><span class="ph"><img loading="lazy" src="img/mood4.jpg" alt=""></span><b>Manifested Love</b><small>Manifest eternal love</small></a>
-                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Prosperity%20collection."><span class="ph"><img loading="lazy" src="img/mood2.jpg" alt=""></span><b>Prosperity</b><small>Manifest prosperity &amp; possibility</small></a>
-                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Dimensions%20of%20Joy%20collection."><span class="ph"><img loading="lazy" src="img/mood3.jpg" alt=""></span><b>Dimensions of Joy</b><small>Manifest infinite joy</small></a>
+                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Manifested%20Love%20collection."><span class="ph"><img class="up" loading="lazy" src="img/collections/manifested-love.jpg" alt=""></span><b>Manifested Love</b><small>Manifest eternal love</small></a>
+                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Prosperity%20collection."><span class="ph"><img class="up" loading="lazy" src="img/collections/prosperity.jpg" alt=""></span><b>Prosperity</b><small>Manifest prosperity &amp; possibility</small></a>
+                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Dimensions%20of%20Joy%20collection."><span class="ph"><img class="up" loading="lazy" src="img/collections/dimensions-of-joy.jpg" alt=""></span><b>Dimensions of Joy</b><small>Manifest infinite joy</small></a>
                     <a href="#abundance"><span class="ph"><img loading="lazy" src="img/models/abundance.jpg" alt=""></span><b>Abundance Talisman</b><small>Manifest abundance</small></a>
-                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Manifest%20Medallion%20collection."><span class="ph"><img loading="lazy" src="img/manifest-studs.jpg" alt=""></span><b>Manifest Medallion</b><small>Manifest luck</small></a>
+                    <a href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20about%20the%20Manifest%20Medallion%20collection."><span class="ph"><img class="pr" loading="lazy" src="img/collections/manifest-medallion.png" alt=""></span><b>Manifest Medallion</b><small>Manifest luck</small></a>
                 </div>
             </div>
         </section>
