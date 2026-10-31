@@ -703,16 +703,6 @@
             background: #f8e3b4
         }
 
-        /* Blurred poster fills the sides until a landscape cut of the reel is ready */
-        .reel::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url(media/manifest-symbol-poster.jpg) center/cover;
-            filter: blur(40px);
-            clip-path: inset(0)
-        }
-
         .reel::after {
             content: "";
             position: absolute;
@@ -725,7 +715,7 @@
             position: relative;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             display: block
         }
 
@@ -1251,7 +1241,7 @@
             <div class="wrap">
                 <h2 class="d">One Symbol, Infinite Possibilities</h2>
                 <div class="reel">
-                    <video id="reel" src="media/manifest-symbol.mp4" poster="media/manifest-symbol-poster.jpg" autoplay
+                    <video id="reel" src="media/manifest-symbol-horizontal.mp4" poster="media/manifest-symbol-horizontal-poster.jpg" autoplay
                         muted loop playsinline preload="metadata"
                         aria-label="Animation of the Manifest Symbol revealing each of its signs"></video>
                     <button type="button" id="snd" aria-pressed="false">Sound on</button>
