@@ -361,38 +361,54 @@
             color: var(--saffron)
         }
 
+        /* About: centred short paragraphs with a closing line */
+        #start .eyebrow,
+        #start h2.d,
+        #start .lead,
+        #start .kick {
+            text-align: center
+        }
+
+        #start h2.d {
+            font-size: clamp(1.5rem, 4.6cqi, 2.8rem);
+            margin-bottom: 1rem
+        }
+
+        #start .lead {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            margin: 0 auto .5rem
+        }
+
+        .kick.sign {
+            margin-top: 1.4rem;
+            letter-spacing: .2em;
+            text-transform: uppercase
+        }
+
+        /* Three narrow sand boxes, same palette as the hero */
         .steps {
             display: grid;
-            margin-top: 2rem;
-            /* Same sand palette as the hero */
-            background: var(--sand);
-            color: var(--ink);
-            padding: .5rem 1.5rem
+            gap: .9rem;
+            max-width: 760px;
+            margin: 2rem auto 0;
+            color: var(--ink)
         }
 
         .steps>a {
             display: flex;
             flex-direction: column;
-            gap: .55rem;
-            padding: 2.2rem .25rem;
+            align-items: center;
+            text-align: center;
+            gap: .3rem;
+            padding: 1rem .75rem;
             text-decoration: none;
-            border-top: 1px solid rgba(28, 24, 20, .18)
-        }
-
-        .steps>a:first-child {
-            border-top: 0
-        }
-
-        .steps .n {
-            font-family: Beckman, Gravity, sans-serif;
-            color: var(--saffron);
-            letter-spacing: .3em;
-            font-size: .95rem
+            background: var(--sand)
         }
 
         .steps h3 {
             margin: 0;
-            font-size: clamp(2rem, 7cqi, 2.6rem);
+            font-size: 1.35rem;
             color: var(--ink);
             letter-spacing: .1em;
             text-transform: uppercase;
@@ -401,8 +417,8 @@
 
         .steps .st {
             margin: 0;
-            font-size: .8rem;
-            letter-spacing: .22em;
+            font-size: .68rem;
+            letter-spacing: .18em;
             text-transform: uppercase;
             color: var(--muted)
         }
@@ -710,7 +726,7 @@
         /* Collections: heading stays on one line at every width */
         #collections h2.d {
             white-space: nowrap;
-            font-size: clamp(.9rem, 4.1cqi, 3rem)
+            font-size: clamp(.9rem, 4.9cqi, 3.4rem)
         }
 
         /* Manifest Symbol: one-line heading over a landscape reel */
@@ -756,27 +772,6 @@
             background: rgba(255, 255, 255, .75);
             color: var(--ink);
             cursor: pointer
-        }
-
-        .craft {
-            display: grid;
-            gap: 1.3rem;
-            margin-top: 2.2rem;
-            border-top: 1px solid var(--line);
-            padding-top: 1.6rem
-        }
-
-        .craft b {
-            display: block;
-            font-family: Beckman, Gravity, sans-serif;
-            font-weight: 400;
-            font-size: 1.25rem;
-            letter-spacing: .04em
-        }
-
-        .craft span {
-            color: var(--muted);
-            font-size: 1.02rem
         }
 
         .badges {
@@ -1109,10 +1104,6 @@
                 font-size: clamp(1.6rem, 3.6cqi, 3rem)
             }
 
-            .craft {
-                grid-template-columns: repeat(3, 1fr)
-            }
-
             .stage,
             .adv {
                 grid-template-columns: 1fr 1fr;
@@ -1125,16 +1116,6 @@
 
             .coll {
                 grid-template-columns: repeat(4, minmax(0, 1fr))
-            }
-
-            .steps>a {
-                border-top: 0;
-                border-left: 1px solid rgba(28, 24, 20, .18);
-                padding: 2.4rem 2rem
-            }
-
-            .steps>a:first-child {
-                border-left: 0
             }
 
             .herobg {
@@ -1169,7 +1150,22 @@
             }
 
             .card {
-                flex-basis: calc((100% - 2rem) / 3)
+                flex-basis: calc((100% - 3rem) / 4);
+                padding-inline: .4rem
+            }
+
+            /* Four to a frame: tighter type so names and lines stay short */
+            .card h3 {
+                font-size: .95rem;
+                letter-spacing: .14em
+            }
+
+            .card .mt {
+                font-size: .95rem
+            }
+
+            .card .po {
+                font-size: .86rem
             }
 
             .railbox .rp {
@@ -1271,36 +1267,34 @@
                     <button type="button" id="snd" aria-pressed="false">Sound on</button>
                 </div>
                 <div>
-                    <div class="craft">
-                        <div><b>Designed in-house</b><span>Every talisman begins as a sketch of the Manifest
-                                Symbol.</span></div>
-                        <div><b>US and Indian patented</b><span>The symbol and its design are protected in both
-                                countries.</span></div>
-                        <div><b>Handcrafted in gold</b><span>18K hallmarked gold with certified diamonds.</span></div>
-                    </div>
-                    <div class="badges"><span>IGI Certified</span><span>BIS Hallmarked</span><span>US &amp; Indian
-                            patented</span></div>
+                    <div class="badges"><span>Designed in-house</span><span>US &amp; Indian patented</span><span>18K
+                            hallmarked gold</span><span>IGI certified diamonds</span></div>
                 </div>
             </div>
         </section>
         <section id="start" class="alt">
             <div class="wrap">
-                <h2 class="d">Imagination meets infinity</h2>
-                <p class="kick">Your dreams. Our reality.</p>
-                <p class="lead">Tenth Dimension Jewels is a luxury fine jewellery house inspired by the belief
-                    that every individual has the infinite potential to become the best version of themselves.
-                    Our philosophy is rooted in manifestation, inspired by the Tenth Dimension in string theory
-                    — a realm where everything imagined becomes possible.</p>
+                <p class="eyebrow">About Tenth Dimension Jewels</p>
+                <h2 class="d">You have the power to manifest</h2>
+                <p class="lead">At Tenth Dimension Jewels, we believe in your infinite potential to manifest your dreams.</p>
+                <p class="lead">Inspired by the Tenth Dimension in string theory — a realm of infinite possibilities — our
+                    luxury fine jewellery house celebrates the power of manifestation.</p>
+                <p class="lead">Through meaningful symbols, patented designs and exceptional craftsmanship, we create
+                    personal talismans that inspire you to dream, believe and manifest.</p>
+                <p class="lead">More than jewellery, each creation is a reminder of your intentions, inner power and
+                    infinite possibilities.</p>
+                <p class="lead">Discover the jewel that reflects your dreams and intentions.</p>
+                <p class="kick sign">Choose to wear your power to manifest. ✨</p>
                 <div class="steps">
-                    <a href="#symbols"><span class="n">I</span>
+                    <a href="#symbols">
                         <h3 class="d">Dream</h3>
                         <p class="st">Envision your Possibilities</p>
                     </a>
-                    <a href="#collections"><span class="n">II</span>
+                    <a href="#collections">
                         <h3 class="d">Align</h3>
                         <p class="st">Choose your Manifestation Talisman</p>
                     </a>
-                    <a href="#wear"><span class="n">III</span>
+                    <a href="#wear">
                         <h3 class="d">Manifest</h3>
                         <p class="st">Wear the Power to Manifest</p>
                     </a>
@@ -1721,10 +1715,10 @@
         </section>
         <section id="wear" class="alt">
             <div class="wrap">
-                <p class="eyebrow">Manifest &nbsp;—&nbsp; Wear it as a daily reminder</p>
-                <h2 class="d">Worn close, every day</h2>
-                <p class="lead">A talisman is meant to be lived in. Wear yours every day as a quiet reminder of the
-                    intention you have set.</p>
+                <h2 class="d">Manifest &nbsp;—&nbsp; Wear it as a daily reminder</h2>
+                <!-- <h2 class="d">Worn close, every day</h2> -->
+                <!-- <p class="lead">A talisman is meant to be lived in. Wear yours every day as a quiet reminder of the -->
+                    <!-- intention you have set.</p> -->
                 <div class="wear">
                     <img loading="lazy" src="img/mood1.jpg" width="576" height="303" alt="Panther talisman ring set with diamonds, emeralds and black onyx">
                     <img loading="lazy" src="img/mood2.jpg" width="575" height="303" alt="An emerald and diamond Manifest pendant on cream silk with pearls">
