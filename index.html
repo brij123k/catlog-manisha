@@ -330,8 +330,14 @@
         }
 
         section {
-            padding: 4.5rem 0;
+            padding: .5rem 0;
             background: var(--bg)
+        }
+
+        @media (min-width: 820px) {
+            section {
+                padding: .6rem 0
+            }
         }
 
         section+section {
@@ -357,9 +363,10 @@
 
         .steps {
             display: grid;
-            margin-top: 3.5rem;
-            background: var(--ink);
-            color: #f3ece1;
+            margin-top: 2rem;
+            /* Same sand palette as the hero */
+            background: var(--sand);
+            color: var(--ink);
             padding: .5rem 1.5rem
         }
 
@@ -369,7 +376,7 @@
             gap: .55rem;
             padding: 2.2rem .25rem;
             text-decoration: none;
-            border-top: 1px solid rgba(184, 154, 114, .35)
+            border-top: 1px solid rgba(28, 24, 20, .18)
         }
 
         .steps>a:first-child {
@@ -378,7 +385,7 @@
 
         .steps .n {
             font-family: Beckman, Gravity, sans-serif;
-            color: var(--acc);
+            color: var(--saffron);
             letter-spacing: .3em;
             font-size: .95rem
         }
@@ -386,7 +393,7 @@
         .steps h3 {
             margin: 0;
             font-size: clamp(2rem, 7cqi, 2.6rem);
-            color: #fff;
+            color: var(--ink);
             letter-spacing: .1em;
             text-transform: uppercase;
             transition: color .25s
@@ -397,18 +404,11 @@
             font-size: .8rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            color: var(--gold-l)
-        }
-
-        .steps p {
-            margin: 0;
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #d9cdbb
+            color: var(--muted)
         }
 
         .steps>a:hover h3 {
-            color: var(--gold-l)
+            color: var(--saffron)
         }
 
         /* Collections: model photo cards */
@@ -606,9 +606,9 @@
         }
 
         .card .po {
-            font-size: 1.15rem;
+            font-size: 1rem;
             font-style: italic;
-            margin: 0 .5rem 1.1rem;
+            margin: 0 -.25rem 1.1rem;
             flex: 1;
             color: var(--muted)
         }
@@ -705,6 +705,12 @@
             color: var(--gold);
             font-weight: 400;
             margin: 0 0 .9rem
+        }
+
+        /* Collections: heading stays on one line at every width */
+        #collections h2.d {
+            white-space: nowrap;
+            font-size: clamp(.9rem, 4.1cqi, 3rem)
         }
 
         /* Manifest Symbol: one-line heading over a landscape reel */
@@ -1123,7 +1129,7 @@
 
             .steps>a {
                 border-top: 0;
-                border-left: 1px solid rgba(184, 154, 114, .35);
+                border-left: 1px solid rgba(28, 24, 20, .18);
                 padding: 2.4rem 2rem
             }
 
@@ -1288,18 +1294,15 @@
                 <div class="steps">
                     <a href="#symbols"><span class="n">I</span>
                         <h3 class="d">Dream</h3>
-                        <p class="st">Choose your symbol of manifestation</p>
-                        <p>What would you like to bring into your life? Meet the fifteen symbols and the intention each one carries.</p>
+                        <p class="st">Envision your Possibilities</p>
                     </a>
                     <a href="#collections"><span class="n">II</span>
                         <h3 class="d">Align</h3>
-                        <p class="st">Choose the collection that speaks to it</p>
-                        <p>See each symbol as a fine jewel, and find the collection that holds your intention.</p>
+                        <p class="st">Choose your Manifestation Talisman</p>
                     </a>
                     <a href="#wear"><span class="n">III</span>
                         <h3 class="d">Manifest</h3>
-                        <p class="st">Wear it as a daily reminder</p>
-                        <p>Your personal manifestation talisman, worn close every day: a quiet reminder of what you are becoming.</p>
+                        <p class="st">Wear the Power to Manifest</p>
                     </a>
                 </div>
             </div>
@@ -1329,9 +1332,7 @@
                                 alt="Manifest Pendant"></div>
                         <h3>Manifest Pendant</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">Guided by cosmic symbols and infinite possibility,<br>The Manifest Symbol shines
-                            with purpose and clarity.<br>A pendant of ambition, destiny, and light,<br>Inspiring dreams
-                            to become reality.</p><a class="btn s"
+                        <p class="po">A pendant of ambition, destiny, and light,<br>Inspiring dreams to become reality.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Manifest%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1341,9 +1342,7 @@
                                 alt="Manifest Talisman Pendant"></div>
                         <h3>Manifest Talisman Pendant</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">A talisman of dreams, guided by light,<br>Where the sun, moon, and stars
-                            unite.<br>Worn close to the heart with purpose and grace,<br>Manifesting abundance in every
-                            space.</p><a class="btn s"
+                        <p class="po">A talisman of dreams, guided by light,<br>Where the sun, moon, and stars unite.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Manifest%20Talisman%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1353,9 +1352,7 @@
                                 alt="Manifest Earrings"></div>
                         <h3>Manifest Earrings</h3>
                         <p class="mt">18K gold · Diamonds · Wear as studs or drop earrings</p>
-                        <p class="po">Where cosmic energy and elegance unite,<br>The Manifest Earrings radiate purpose
-                            and light.<br>A timeless reminder to believe and become,<br>For every dream begins with
-                            intention.</p><a class="btn s"
+                        <p class="po">Where cosmic energy and elegance unite,<br>The Manifest Earrings radiate purpose and light.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Manifest%20Earrings.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1365,9 +1362,7 @@
                                 alt="Manifest Mon Soleil Pendant"></div>
                         <h3>Manifest Mon Soleil Pendant</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">Inspired by the brilliance of the sun above,<br>Mon Soleil reflects light,
-                            confidence, and love.<br>A timeless symbol of energy and possibility,<br>Crafted to shine as
-                            brightly as you.</p><a class="btn s"
+                        <p class="po">Inspired by the brilliance of the sun above,<br>Mon Soleil reflects light, confidence, and love.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Manifest%20Mon%20Soleil%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1460,8 +1455,7 @@
                                 alt="Serenity Mother of Pearl Pendant"></div>
                         <h3>Serenity Mother of Pearl Pendant</h3>
                         <p class="mt">18K gold · Mother of pearl</p>
-                        <p class="po">Soft as moonlight, pure as the sea,<br>A pendant of calm and destiny.<br>With the
-                            Manifest Symbol shining true,<br>Infinite possibilities begin with you.</p><a class="btn s"
+                        <p class="po">Soft as moonlight, pure as the sea,<br>A pendant of calm and destiny.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Mother%20of%20Pearl%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1471,8 +1465,7 @@
                                 alt="Serenity Mother of Pearl Bracelet"></div>
                         <h3>Serenity Mother of Pearl Bracelet</h3>
                         <p class="mt">18K gold · Mother of pearl</p>
-                        <p class="po">Gracefully worn, serene and true,<br>A bracelet of light created for
-                            you.<br>Mother of Pearl and dreams aligned,<br>A symbol of abundance for heart and mind.</p>
+                        <p class="po">Gracefully worn, serene and true,<br>A bracelet of light created for you.</p>
                         <a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Mother%20of%20Pearl%20Bracelet.">Enquire
                             on WhatsApp</a>
@@ -1483,9 +1476,7 @@
                                 alt="Serenity Mother of Pearl Earrings"></div>
                         <h3>Serenity Mother of Pearl Earrings</h3>
                         <p class="mt">18K gold · Mother of pearl</p>
-                        <p class="po">Decagon-cut Mother of Pearl, graceful and bright,<br>Guided by the Manifest
-                            Symbol’s light.<br>A pair of earrings that radiate serenity and grace,<br>Inspiring beauty
-                            and possibility with every embrace.</p><a class="btn s"
+                        <p class="po">Decagon-cut Mother of Pearl, graceful and bright,<br>Guided by the Manifest Symbol’s light.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Mother%20of%20Pearl%20Earrings.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1495,9 +1486,7 @@
                                 alt="Serenity Mother of Pearl Ring"></div>
                         <h3>Serenity Mother of Pearl Ring</h3>
                         <p class="mt">18K gold · Mother of pearl</p>
-                        <p class="po">A ring of serenity, graceful and bright,<br>Mother of Pearl glowing with gentle
-                            light.<br>The Manifest Symbol, timeless and true,<br>A reminder that endless possibilities
-                            begin with you.</p><a class="btn s"
+                        <p class="po">A ring of serenity, graceful and bright,<br>Mother of Pearl glowing with gentle light.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Mother%20of%20Pearl%20Ring.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1507,9 +1496,7 @@
                                 alt="Serenity Black Onyx Pendant"></div>
                         <h3>Serenity Black Onyx Pendant</h3>
                         <p class="mt">18K gold · Black onyx</p>
-                        <p class="po">In Black Onyx, strength and serenity unite,<br>Guided by a symbol of infinite
-                            light.<br>A timeless pendant, powerful and true,<br>Reflecting the confidence within you.
-                        </p><a class="btn s"
+                        <p class="po">In Black Onyx, strength and serenity unite,<br>Guided by a symbol of infinite light.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Black%20Onyx%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1519,9 +1506,7 @@
                                 alt="Serenity Black Onyx Bracelet"></div>
                         <h3>Serenity Black Onyx Bracelet</h3>
                         <p class="mt">18K gold · Black onyx</p>
-                        <p class="po">Black Onyx upon the wrist, steady and strong,<br>A symbol of focus to guide you
-                            along.<br>With the Manifest Symbol lighting the way,<br>Strength and serenity stay with you
-                            each day.</p><a class="btn s"
+                        <p class="po">Black Onyx upon the wrist, steady and strong,<br>A symbol of focus to guide you along.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Black%20Onyx%20Bracelet.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1531,8 +1516,7 @@
                                 alt="Serenity Black Onyx Ring"></div>
                         <h3>Serenity Black Onyx Ring</h3>
                         <p class="mt">18K gold · Black onyx</p>
-                        <p class="po">Deep as midnight, steady and true,<br>Black Onyx reflects the power within
-                            you.<br>A timeless ring of confidence and grace,<br>Designed to inspire at every place.</p>
+                        <p class="po">Deep as midnight, steady and true,<br>Black Onyx reflects the power within you.</p>
                         <a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Black%20Onyx%20Ring.">Enquire
                             on WhatsApp</a>
@@ -1543,8 +1527,7 @@
                                 alt="Serenity Lapis Lazuli Pendant"></div>
                         <h3>Serenity Lapis Lazuli Pendant</h3>
                         <p class="mt">18K gold · Lapis lazuli</p>
-                        <p class="po">Lapis Lazuli, deep as the evening sky,<br>A symbol of wisdom that lifts you
-                            high.<br>With the Manifest Symbol shining true,<br>Infinite possibilities awaken in you.</p>
+                        <p class="po">Lapis Lazuli, deep as the evening sky,<br>A symbol of wisdom that lifts you high.</p>
                         <a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Lapis%20Lazuli%20Pendant.">Enquire
                             on WhatsApp</a>
@@ -1555,8 +1538,7 @@
                                 alt="Serenity Lapis Lazuli Bracelet"></div>
                         <h3>Serenity Lapis Lazuli Bracelet</h3>
                         <p class="mt">18K gold · Lapis lazuli</p>
-                        <p class="po">A touch of blue, serene and rare,<br>Lapis Lazuli crafted with care.<br>Upon your
-                            wrist, a symbol divine,<br>Of wisdom, confidence, and paths aligned.</p><a class="btn s"
+                        <p class="po">A touch of blue, serene and rare,<br>Lapis Lazuli crafted with care.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Lapis%20Lazuli%20Bracelet.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1566,8 +1548,7 @@
                                 alt="Serenity Lapis Lazuli Ring"></div>
                         <h3>Serenity Lapis Lazuli Ring</h3>
                         <p class="mt">18K gold · Lapis lazuli</p>
-                        <p class="po">Rich in blue, timeless and rare,<br>A ring of confidence crafted with care.<br>The
-                            Manifest Symbol lighting the way,<br>Inspiring strength with each new day.</p><a
+                        <p class="po">Rich in blue, timeless and rare,<br>A ring of confidence crafted with care.</p><a
                             class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Serenity%20Lapis%20Lazuli%20Ring.">Enquire
                             on WhatsApp</a>
@@ -1599,9 +1580,7 @@
                                 alt="Sparkle Pendant"></div>
                         <h3>Sparkle Pendant</h3>
                         <p class="mt">18K gold · 157 diamonds</p>
-                        <p class="po">157 diamonds, one radiant glow,<br>A masterpiece crafted to steal the
-                            show.<br>With every sparkle, brilliance takes flight,<br>Capturing elegance in pure light.
-                        </p><a class="btn s"
+                        <p class="po">157 diamonds, one radiant glow,<br>A masterpiece crafted to steal the show.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Sparkle%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1611,8 +1590,7 @@
                                 alt="Sparkle Earrings"></div>
                         <h3>Sparkle Earrings</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">Where brilliance dances and diamonds shine,<br>SPARKLE captures moments
-                            divine.<br>A touch of glamour, forever bright,<br>Illuminating every moment with light.</p>
+                        <p class="po">Where brilliance dances and diamonds shine,<br>SPARKLE captures moments divine.</p>
                         <a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Sparkle%20Earrings.">Enquire
                             on WhatsApp</a>
@@ -1623,9 +1601,7 @@
                                 alt="Sparkle Bracelet"></div>
                         <h3>Sparkle Bracelet</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">A sparkle of light, a radiant gleam,<br>Crafted to shine beyond every
-                            dream.<br>Timeless elegance, brilliance untold,<br>A story of glamour in diamonds and gold.
-                        </p><a class="btn s"
+                        <p class="po">A sparkle of light, a radiant gleam,<br>Crafted to shine beyond every dream.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Sparkle%20Bracelet.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1635,8 +1611,7 @@
                                 alt="Sparkle Ring"></div>
                         <h3>Sparkle Ring</h3>
                         <p class="mt">18K gold · 157 diamonds</p>
-                        <p class="po">157 diamonds, dazzling and bright,<br>Woven together in a dance of light.<br>A
-                            timeless sparkle, bold and rare,<br>Designed to shine beyond compare.</p><a class="btn s"
+                        <p class="po">157 diamonds, dazzling and bright,<br>Woven together in a dance of light.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Sparkle%20Ring.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1665,8 +1640,7 @@
                                 alt="Halo Pendant"></div>
                         <h3>Halo Pendant</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">A halo of light, a timeless glow,<br>A symbol of grace wherever you go.<br>Crafted
-                            to shine, elegant and true,<br>A radiant reflection of the light in you.</p><a class="btn s"
+                        <p class="po">A halo of light, a timeless glow,<br>A symbol of grace wherever you go.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Halo%20Pendant.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1676,9 +1650,7 @@
                                 alt="Halo Earrings"></div>
                         <h3>Halo Earrings</h3>
                         <p class="mt">18K gold · Diamonds</p>
-                        <p class="po">Like stars that dance in midnight skies,<br>HALO Earrings shimmer and
-                            mesmerize.<br>A touch of grace, a radiant glow,<br>Reflecting the light you already know.
-                        </p><a class="btn s"
+                        <p class="po">Like stars that dance in midnight skies,<br>HALO Earrings shimmer and mesmerize.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Halo%20Earrings.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1688,8 +1660,7 @@
                                 alt="Halo Ring"></div>
                         <h3>Halo Ring</h3>
                         <p class="mt">18K gold · Solitaire diamond with diamond halo</p>
-                        <p class="po">A Solitaire Diamond, pure and bright,<br>Encircled by a halo of light.<br>A
-                            timeless promise, graceful and true,<br>Forever reflecting the brilliance of you.</p><a
+                        <p class="po">A Solitaire Diamond, pure and bright,<br>Encircled by a halo of light.</p><a
                             class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Halo%20Ring.">Enquire
                             on WhatsApp</a>
@@ -1720,8 +1691,7 @@
                                 alt="Je T’aime Pendant"></div>
                         <h3>Je T’aime Pendant</h3>
                         <p class="mt">18K gold · 1-carat solitaire</p>
-                        <p class="po">A solitaire shines, a symbol of love,<br>Radiant as the stars above.<br>Inspired
-                            by Paris, timeless and true,<br>A pendant that whispers, Je t’aime to you.</p><a
+                        <p class="po">A solitaire shines, a symbol of love,<br>Radiant as the stars above.</p><a
                             class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Je%20T%E2%80%99aime%20Pendant.">Enquire
                             on WhatsApp</a>
@@ -1732,9 +1702,7 @@
                                 alt="Je T’aime Earrings"></div>
                         <h3>Je T’aime Earrings</h3>
                         <p class="mt">18K gold · Solitaire diamonds</p>
-                        <p class="po">A love untold, a timeless light,<br>Two radiant solitaires shining
-                            bright.<br>Inspired by romance, crafted to inspire,<br>A reflection of passion and hearts on
-                            fire.</p><a class="btn s"
+                        <p class="po">A love untold, a timeless light,<br>Two radiant solitaires shining bright.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Je%20T%E2%80%99aime%20Earrings.">Enquire
                             on WhatsApp</a>
                     </article>
@@ -1744,9 +1712,7 @@
                                 alt="Je T’aime Ring"></div>
                         <h3>Je T’aime Ring</h3>
                         <p class="mt">18K gold · 1-carat solitaire</p>
-                        <p class="po">A solitaire blooms in a circle of light,<br>A symbol of love, graceful and
-                            bright.<br>Inspired by Paris, timeless and true,<br>A ring that softly whispers, Je t’aime
-                            to you.</p><a class="btn s"
+                        <p class="po">A solitaire blooms in a circle of light,<br>A symbol of love, graceful and bright.</p><a class="btn s"
                             href="https://wa.me/919902413410?text=Hi%20Tenth%20Dimension%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Je%20T%E2%80%99aime%20Ring.">Enquire
                             on WhatsApp</a>
                     </article>
